@@ -1,10 +1,10 @@
 'use strict';
 
 let cron = require('cron');
-let populate = require('populate.js');
+let populate = require('./populate.js');
 
 let update = new cron.CronJob({
-  cronTime: '* * * * *',
+  cronTime: '0 * * * *',
   onTick: populate,
   start: false,
   timeZone: 'America/Los_Angeles'

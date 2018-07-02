@@ -14,6 +14,8 @@ const port = process.env.PORT || 5000;
 
 let {getPosts, deletePosts} = require('./app/routes/post.js');
 
+require('./app/cron/index');
+
 app.use(cors());
 app.use(helmet());
 app.use('/', express.static(__dirname + '/dist/angular4test'));

@@ -10,18 +10,16 @@ export class PostsComponent implements OnInit {
 
   posts: Post[];
 
-  constructor (private dataService: DataService) {
-    console.log('constructor posts ran..');
-  }
+  constructor (private dataService: DataService) {}
 
   delete(post) {
     post.deleting = true;
     this
     .dataService
     .deletePost(post._id)
-    .subscribe((post: Post) => {
+    .subscribe((response: Post) => {
       this.posts = this.posts.filter((value) => {
-        return post._id === value._id;
+        return response._id !== value._id;
       });
     });
     return false;
@@ -30,7 +28,6 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
     this.dataService.getPosts().subscribe((posts: Post[]) => {
       this.posts = posts;
-      console.log(posts);
     });
   }
 
