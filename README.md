@@ -29,4 +29,7 @@ DB Populated
 
 Go to this [url](http://localhost:5000/). 
 
+### Linting
 
+Front End `npm run lint`
+Back End `npm run eslint`
