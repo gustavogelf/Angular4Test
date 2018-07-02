@@ -18,9 +18,10 @@ require('./app/cron/index');
 
 app.use(cors());
 app.use(helmet());
-app.use('/', express.static(__dirname + '/dist/angular4test'));
 
 app.get('/api/posts', getPosts);
 app.delete('/api/posts/:_id', deletePosts);
+
+app.use('/', express.static(__dirname + '/dist/angular4-test'));
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

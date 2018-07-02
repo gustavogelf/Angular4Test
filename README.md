@@ -1,27 +1,32 @@
 # Angular4Test
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+Small web application to test your knowledge of Angular and Node.js.
 
-## Development server
+## Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Before running the project, make sure you have the correct version on node, listed on the `package.json` to support the ES6 features in the project.
 
-## Code scaffolding
+### Start Mongo Service
+`sudo service mongod start`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Run the project
 
-## Build
+Once inside the project folder take the following steps to run the project.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### Run NPM or Yarn Install
+`yarn install` or `npm install`
 
-## Running unit tests
+### Run the APP
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+`npm run server`
 
-## Running end-to-end tests
+Once the compilation process is done, and the following messages appears on the console:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+```
+Example app listening on port 5000!
+DB Populated
+```
 
-## Further help
+Go to this [url](http://localhost:5000/). 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+

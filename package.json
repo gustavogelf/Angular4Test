@@ -7,8 +7,10 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "server": "npm run build && node index.js"
   },
+  "engine": {"node": ">=8.9.1"},
   "private": true,
   "dependencies": {
     "@angular/animations": "6.0.7",
