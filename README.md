@@ -27,7 +27,7 @@ Example app listening on port 5000!
 DB Populated
 ```
 
-Go to this [url](http://localhost:5000/). 
+Go to this [url](http://localhost:5000/) and enjoy the news. 
 
 ### Linting
 
