@@ -4,7 +4,7 @@ import { DataService } from '../../services/data.service';
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
-  styleUrls: ['./posts.component.css']
+  styleUrls: ['./posts.component.scss']
 })
 export class PostsComponent implements OnInit {
 
@@ -12,6 +12,19 @@ export class PostsComponent implements OnInit {
 
   constructor (private dataService: DataService) {
     console.log('constructor posts ran..');
+  }
+
+  delete(post) {
+    post.deleting = true;
+    this
+    .dataService
+    .deletePost(post._id)
+    .subscribe((post: Post) => {
+      this.posts = this.posts.filter((value) => {
+        return post._id === value._id;
+      });
+    });
+    return false;
   }
 
   ngOnInit() {
@@ -24,6 +37,7 @@ export class PostsComponent implements OnInit {
 }
 
 interface Post {
+  _id: string,
   objectID: string,
   title: string,
   url: string,

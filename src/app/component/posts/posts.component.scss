@@ -1,0 +1,34 @@
+.post {
+
+  &-link {
+    text-decoration: none;
+    background: #FFF;
+
+    &:hover, &:focus {
+      background: #FAFAFA;
+    }
+  }
+
+  &-title, &-time {
+    color: #333;
+    margin-right: 10px;
+  }
+
+  &-progress ~ *:not(mat-divider) {
+    display: none;
+  }
+
+  &-time {
+    margin-right: 20px;
+  }
+
+  &-author {
+
+    color: #999;
+    margin-right: auto;
+
+    &::before, &::after {
+      content: " - "
+    }
+  }
+}

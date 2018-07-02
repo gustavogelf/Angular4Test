@@ -1,3 +1,16 @@
-<p>
-  posts works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>HN Feed</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-list>
+  <a class="post-link" mat-list-item [href]="post.url || '#'" target="_blank" *ngFor="let post of posts;">
+    <mat-progress-bar class="post-progress" *ngIf="post.deleting" mode="indeterminate"></mat-progress-bar>
+    <span class="post-title">{{post.story_title || post.title}}</span>
+    <span class="post-author">{{post.author}}</span>
+    <time class="post-time" pubdate [attr.datetime]="post.created_at | date:'yyyy/MM/dd'" [attr.title]="post.created_at | date:'MMMM d, y'"> {{post.created_at | humanized}}</time>
+    <mat-icon (click)="delete(post)" class="post-remove">delete</mat-icon>
+    <mat-divider></mat-divider>
+  </a>
+
+</mat-list>
